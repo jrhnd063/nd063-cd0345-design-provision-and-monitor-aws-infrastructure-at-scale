@@ -27,6 +27,8 @@ This is based on the following assumptions:
 
 ### Reduced Cost Estimate
 
+The reduced cost estimates are [Reduced_Cost_Estimate.csv](tables/Reduced_Cost_Estimate.csv).
+
 Refining estimates would ideally be based on having monitored the performance of the infrastructure in production and identified where it is over-provisioned. However, given we are reducing the estimate at the pre-production stage, we do not have this data. We don't want to reduce the features available to users, for example by introducing caps on the amount of content that they can create, or to reduce the resilience of the system by swapping to a single AZ setup, so we opt to:
 
 * Reduce the size of the apps servers, since we lack data to justify `m5.2xlarge` being required.
@@ -34,6 +36,8 @@ Refining estimates would ideally be based on having monitored the performance of
 * Assume that our 100% provisioned Web and App servers represent the minimum capacity we will need at all times, and purchase that capacity on a one-year savings plan; the burst capacity for auto-scaling remains on-demand.
 
 ### Increased Cost Estimate
+
+The increased cost estimates are [Increased_Cost_Estimate.csv](tables/Increased_Cost_Estimate.csv).
 
 To increase the resilience and performance with a budget of $20000, we can make the following changes:
 
