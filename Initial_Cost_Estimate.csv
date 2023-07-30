@@ -1,0 +1,23 @@
+﻿Estimate summary
+Upfront cost,Monthly cost,Total 12 months cost,Currency
+6.82,8372.63,100478.38,USD
+,,* Includes upfront cost
+
+
+Detailed Estimate
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+Initial_Cost_Estimate,US East (N. Virginia),Web Servers,Amazon EC2 ,0,280.32,3363.84,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.large), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Initial_Cost_Estimate,US East (N. Virginia),App Servers,Amazon EC2 ,0,1121.28,13455.36,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.2xlarge), Pricing strategy (On-Demand Utilization: 100 %Utilized/Month), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Initial_Cost_Estimate,US East (N. Virginia),Postgres with multi-AZ read replica,Amazon RDS for PostgreSQL,0,2163,25956.00,USD,,"Storage volume (General Purpose SSD (gp2)), Storage amount (200 GB), Nodes (1), Instance Type (db.m2.4xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Multi-AZ), Pricing Model (OnDemand)"
+Initial_Cost_Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,69.3,831.60,USD,,Number of NAT Gateways (2)
+Initial_Cost_Estimate,US East (N. Virginia),Application Load Balancers for the Web Server and App Server Autscaling Groups,Application Load Balancer,0,57.43,689.16,USD,,Number of Application Load Balancers (2)
+Initial_Cost_Estimate,US East (N. Virginia),Average of 250MB transferred per user (minus free 1TB and 10 million requests),Amazon CloudFront,0,3975.67,47708.04,USD,,"Data transfer out to internet (47.8 TB per month), Number of requests (HTTPS) (8688000 per month)"
+Initial_Cost_Estimate,US East (N. Virginia),,S3 Standard,6.81891,355.23,4269.58,USD,,"S3 Standard Average Object Size (5.5 MB), S3 Standard storage (7325 GB per month), PUT, COPY, POST, LIST requests to S3 Standard (1350000), GET, SELECT, and all other requests from S3 Standard (450000000)"
+Initial_Cost_Estimate,US East (N. Virginia),,Data Transfer,0,0,0.00,USD,,
+Initial_Cost_Estimate,US East (N. Virginia),Web Servers Autoscaled: 25% of the time need 2x as many instances,Amazon EC2 ,0,70.08,840.96,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.large), Pricing strategy (On-Demand Utilization: 25 %Utilized/Month), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Initial_Cost_Estimate,US East (N. Virginia),App Servers Autoscaled: 25% of the time need 2x as many instances,Amazon EC2 ,0,280.32,3363.84,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.2xlarge), Pricing strategy (On-Demand Utilization: 25 %Utilized/Month), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."

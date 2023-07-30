@@ -1,0 +1,29 @@
+﻿Estimate summary,,,,,,,,,
+Upfront cost,Monthly cost,Total 12 months cost,Currency,,,,,,
+6.82,6339.59,76081.9,USD,,,,,,
+,,* Includes upfront cost,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Detailed Estimate,,,,,,,,,
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Status,Configuration summary
+Reduced_Cost_Estimate,US East (N. Virginia),Web Servers,Amazon EC2 ,0,175.2,2102.4,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.large), Pricing strategy (Amazon EC2 Instance Savings Plans 1yr No Upfront), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),App Servers,Amazon EC2 ,0,353.32,4239.84,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.xlarge), Pricing strategy (Amazon EC2 Instance Savings Plans 1yr No Upfront), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),Postgres with multi-AZ read replica,Amazon RDS for PostgreSQL,0,1143.2,13718.4,USD,,"Storage volume (General Purpose SSD (gp3)), Storage amount (400 GB), Nodes (1), Instance Type (db.m2.2xlarge), Utilization (On-Demand only) (100 %Utilized/Month), Deployment Option (Multi-AZ), Pricing Model (OnDemand), General Purpose SSD (gp3) - IOPS (12000), General Purpose SSD (gp3) - Throughput (500 MiBps)"
+Reduced_Cost_Estimate,US East (N. Virginia),,Network Address Translation (NAT) Gateway,0,69.3,831.6,USD,,Number of NAT Gateways (2)
+Reduced_Cost_Estimate,US East (N. Virginia),Application Load Balancers for the Web Server and App Server Autscaling Groups,Application Load Balancer,0,57.43,689.16,USD,,Number of Application Load Balancers (2)
+Reduced_Cost_Estimate,US East (N. Virginia),Average of 1G per user/month (minus free 1TB and 10 million requests),Amazon CloudFront,0,3975.67,47708.04,USD,,"Data transfer out to internet (47.8 TB per month), Number of requests (HTTPS) (8688000 per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),,S3 Standard,6.81891,355.23,4269.58,USD,,"S3 Standard Average Object Size (5.5 MB), S3 Standard storage (7325 GB per month), PUT, COPY, POST, LIST requests to S3 Standard (1350000), GET, SELECT, and all other requests from S3 Standard (450000000)"
+Reduced_Cost_Estimate,US East (N. Virginia),,Data Transfer,0,0,0,USD,,"DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),Web Servers Autoscaled: 25% of the time need 2x as many instances,Amazon EC2 ,0,70.08,840.96,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.large), Pricing strategy (On-Demand Utilization: 25 %Utilized/Month), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+Reduced_Cost_Estimate,US East (N. Virginia),App Servers Autoscaled: 25% of the time need 2x as many instances,Amazon EC2 ,0,140.16,1681.92,USD,,"Tenancy (Shared Instances), Operating system (Linux), Workload (Consistent, Number of instances: 4), Advance EC2 instance (m5.xlarge), Pricing strategy (On-Demand Utilization: 25 %Utilized/Month), Enable monitoring (disabled), DT Inbound: Not selected (0 TB per month), DT Outbound: Not selected (0 TB per month), DT Intra-Region: (0 TB per month)"
+,,,,,,,,,
+,,,,,,,,,
+,,,,,,,,,
+Acknowledgement,,,,,,,,,
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services.",,,,,,,,,
+,,,,,,,,,
+"Refining estimates would ideally be based on having monitored the performance of the infrastructure in production and identified where it is over-provisioned. However, given we are reducing the estimate at the pre-production stage, we do not have this data. We don't want to reduce the features available to users, for example by introducing caps on the amount of content that they can create, or to reduce the resilience of the system by swapping to a single AZ setup, so we opt to:
+
+* Reduce the size of the apps servers, since we lack data to justify `m5.2xlarge` being required.
+* Reduce the size of the database instance to `db.m2.2xlarge` with the same reasoning.
+* Assume that our 100% provisioned Web and App servers represent the minimum capacity we will need at all times, and purchase that capacity on a one-year savings plan; the burst capacity for auto-scaling remains on-demand.",,,,,,,,,
